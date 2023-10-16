@@ -28,6 +28,7 @@
     </content>
     <orderEntry type="jdk" jdkName="ruby-3.2.2-p53 (2)" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery-3.6.0" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.0.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.0.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.0.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
@@ -39,6 +40,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v7.0.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.19, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.16.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, ruby-3.2.2-p53 (2)) [gem]" level="application" />
@@ -47,6 +49,7 @@
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cssbundling-rails (v1.3.3, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug (v1.8.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="devise (v4.9.2, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.12.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="foreman (v0.87.2, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v1.2.1, ruby-3.2.2-p53 (2)) [gem]" level="application" />
@@ -67,8 +70,10 @@
     <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.4.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.9, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.15.4, ruby-3.2.2-p53 (2)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="psych (v5.1.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.6.7, ruby-3.2.2-p53 (2)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pundit (v2.3.1, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.7.1, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.1.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
@@ -79,6 +84,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.5.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.3.8, ruby-3.2.2-p53 (2)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.6.6, ruby-3.2.2-p53 (2)) [gem]" level="application" />
@@ -89,6 +95,7 @@
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.4.0, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo-data (v1.2023.3, ruby-3.2.2-p53 (2)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.6, ruby-3.2.2-p53 (2)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, ruby-3.2.2-p53 (2)) [gem]" level="application" />
@@ -102,11 +109,16 @@
     <option name="generators">
       <list>
         <option value="active_record:application_record" />
+        <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
+        <option value="devise" />
+        <option value="devise:controllers" />
+        <option value="devise:install" />
+        <option value="devise:views" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -116,7 +128,13 @@
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
+        <option value="mongoid:devise" />
+        <option value="pundit:install" />
+        <option value="pundit:policy" />
         <option value="resource" />
+        <option value="responders:install" />
+        <option value="responders_controller" />
+        <option value="rspec:policy" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="stimulus" />
@@ -133,6 +151,7 @@
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:policy" />
         <option value="test_unit:scaffold" />
         <option value="test_unit:system" />
       </list>
@@ -140,11 +159,16 @@
     <option name="myGenerators">
       <list>
         <option value="active_record:application_record" />
+        <option value="active_record:devise" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
+        <option value="devise" />
+        <option value="devise:controllers" />
+        <option value="devise:install" />
+        <option value="devise:views" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
@@ -154,7 +178,13 @@
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
+        <option value="mongoid:devise" />
+        <option value="pundit:install" />
+        <option value="pundit:policy" />
         <option value="resource" />
+        <option value="responders:install" />
+        <option value="responders_controller" />
+        <option value="rspec:policy" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
         <option value="stimulus" />
@@ -171,6 +201,7 @@
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:policy" />
         <option value="test_unit:scaffold" />
         <option value="test_unit:system" />
       </list>

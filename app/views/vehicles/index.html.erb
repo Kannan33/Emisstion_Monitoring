@@ -1,0 +1,33 @@
+<% if RtoOfficer.signed_in? %>
+<% elsif user.signed_in? %>
+<% end %>
+
+<!-- vehicle list -->
+<div class="container-fluid">
+  <!-- vehicle search -->
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-center">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <% @vehicles.each do |vehicle| %>
+    <div class="row">
+      <!-- for vehicle number -->
+      <div class="col-6">
+        <span><%= vehicle.vehicle_number %></span>
+      </div>
+      <!-- for vehicle type -->
+      <div class="col-3">
+        <%= vehicle.vehicle_type %>
+      </div>
+      <!-- for view page button -->
+      <div class="col-3">
+        <%= link_to "show", vehicle_path(vehicle), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
