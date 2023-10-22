@@ -1,0 +1,29 @@
+<div class="container-fluid row">
+  <div class="col-8 offset-2">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Carbon dioxide</th>
+        <th>Carbon monoxide</th>
+        <th>Air Quality</th>
+        <th>Timestamp</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @emission_records&.each do |record| %>
+      <% id = 0 %>
+        <tr>
+          <% id = id+1 %>
+          <td><%= id %></td>
+          <td><%= record.carbon_dioxide %></td>
+          <td><%= record.carbon_monoxide %></td>
+          <td><%= record.air_quality %></td>
+          <td><%= record.created_at %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

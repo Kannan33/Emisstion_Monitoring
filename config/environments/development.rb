@@ -2,6 +2,13 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  # Replace 'your_local_ip' with the local IP address obtained earlier.
+
+  # Replace 'your_local_ip' with the local IP address and '3000' with your desired port.
+  config.web_console.allowed_ips = ['192.168.85.76','192.168.85.23']
+  config.hosts.clear
+  config.hosts << '192.168.85.76:3000'
+
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development

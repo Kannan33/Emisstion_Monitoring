@@ -1,33 +1,37 @@
-<% if RtoOfficer.signed_in? %>
-<% elsif user.signed_in? %>
-<% end %>
+<%# if RtoOfficer.signed_in? %>
+<%# elsif user.signed_in? %>
+<%# end %>
 
 <!-- vehicle list -->
 <div class="container-fluid">
   <!-- vehicle search -->
   <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-center">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    <div class="container-fluid row">
+      <%= form_with url: search_vehicles_path, method: :get, class: 'd-flex col-12 col-lg-10 offset-lg-1' do |form| %>
+        <%= form.text_field :vehicle_number, class: "form-control me-2 w-100", placeholder: "Enter Vehicle Number" %>
+        <%= form.submit "Search", class: "btn btn-outline-success" %>
+      <% end %>
     </div>
   </nav>
 
-  <% @vehicles.each do |vehicle| %>
-    <div class="row">
-      <!-- for vehicle number -->
-      <div class="col-6">
-        <span><%= vehicle.vehicle_number %></span>
+  <div class="container-fluid col-10 offset-1">
+    <% @vehicles.each do |vehicle| %>
+      <div class="row mt-1">
+        <!-- for vehicle number -->
+        <div class="col-6">
+          <span><%= vehicle.vehicle_number %></span> -
+          <span><%= vehicle.vehicle_model %></span>
+        </div>
+        <!-- for vehicle type -->
+        <div class="col-3">
+          <%= vehicle.vehicle_type %>
+        </div>
+        <!-- for view page button -->
+        <div class="col-3 btn-group">
+          <%= link_to "edit", edit_vehicle_path(vehicle), class: "btn btn-warning" %>
+          <%= link_to "show", vehicle_path(vehicle), class: "btn btn-primary" %>
+        </div>
       </div>
-      <!-- for vehicle type -->
-      <div class="col-3">
-        <%= vehicle.vehicle_type %>
-      </div>
-      <!-- for view page button -->
-      <div class="col-3">
-        <%= link_to "show", vehicle_path(vehicle), class: "btn btn-primary" %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
