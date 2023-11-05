@@ -1,29 +1,79 @@
-<div class="container-fluid row">
-  <div class="col-8 offset-2">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Carbon dioxide</th>
-        <th>Carbon monoxide</th>
-        <th>Air Quality</th>
-        <th>Timestamp</th>
-      </tr>
-      </thead>
+<div class="container-fluid">
+  <% if @emission_records.present? %>
+  <div class="row">
+    <div class="mt-2 col-8">
+    <% if rto_officer_signed_in? %>
+        <strong class="me-2">Approve Vehicle : </strong><%= link_to "Approve", approve_vehicle_vehicle_path(@vehicle), data: {  }, class: "btn btn-sm btn-primary"  %>
+    <% end %>
+    </div>
+    <div class="text-end col-4">
+      <%= link_to "Download Record", download_emission_records_vehicle_url(@vehicle, format: :pdf), class: "text-end btn btn-sm btn-secondary" %>
+    </div>
+  </div>
+  <div class="table-responsive table-fixed-header">
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Carbon dioxide</th>
+              <th>Carbon monoxide</th>
+              <th>Air Quality</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
 
       <tbody>
-      <% @emission_records&.each do |record| %>
       <% id = 0 %>
-        <tr>
-          <% id = id+1 %>
-          <td><%= id %></td>
-          <td><%= record.carbon_dioxide %></td>
-          <td><%= record.carbon_monoxide %></td>
-          <td><%= record.air_quality %></td>
-          <td><%= record.created_at %></td>
-        </tr>
-      <% end %>
+      <% @emission_records&.each do |record| %>
+      <tr>
+        <% id = id + 1 %>
+        <td><%=  id  %></td>
+        <td><%= record.carbon_dioxide %></td>
+        <td><%=  record.carbon_monoxide  %></td>
+        <td><%= record.air_quality %></td>
+        <td><%=  record.created_at  %></td>
+      </tr>
+      <%  end  %>
       </tbody>
     </table>
+
   </div>
+  <!-- for graph and chart -->
+  <div class="container-fluid">
+
+    <%# @emission = EmissionRecord.all.limit(50) %>
+<!--    <div class="Co2-partial col-8 offset-2">-->
+<!--      <h3>Carbon dioxide</h3>-->
+<!--      <div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="Co-partial col-6 offset-2">-->
+<!--      <h3>Carbon monoxide</h3>-->
+<!--      <div>-->
+        <%#= line_chart [[2,4], [3,5], [4,6]] %>
+<!--      </div>-->
+<!--    </div>-->
+  <% else %>
+    <div class="mt-2 text-end d-flex justify-content-center align-items-center">
+      <strong class="me-2">Approve Vehicle : </strong><%= link_to "Approve", approve_vehicle_vehicle_path(@vehicle), data: {  }, class: "btn btn-primary"  %>
+    </div>
+    <h3 class="mt-2 text-center" style="color: red">
+      No records found...
+    </h3>
+  <%  end %>
+  </div>
+
 </div>
+<style>
+    .table-fixed-header {
+        overflow: auto;
+        max-height: 85vh;
+    }
+    .table-fixed-header thead {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+    }
+</style>

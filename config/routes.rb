@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'users#home'
   resources :vehicles do
-    get :pending_verification, on: :collection
+    get 'download_emission_records', on: :member, to: 'vehicles#download_emission_records'
+    get :approve_vehicle, on: :member
     get :search, on: :collection
   end
+
 
   namespace :api do
     namespace :v1 do

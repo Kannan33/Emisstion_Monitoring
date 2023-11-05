@@ -1,37 +1,43 @@
-<%# if RtoOfficer.signed_in? %>
-<%# elsif user.signed_in? %>
-<%# end %>
-
 <!-- vehicle list -->
 <div class="container-fluid">
   <!-- vehicle search -->
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid row">
-      <%= form_with url: search_vehicles_path, method: :get, class: 'd-flex col-12 col-lg-10 offset-lg-1' do |form| %>
-        <%= form.text_field :vehicle_number, class: "form-control me-2 w-100", placeholder: "Enter Vehicle Number" %>
-        <%= form.submit "Search", class: "btn btn-outline-success" %>
-      <% end %>
-    </div>
-  </nav>
+  <% if @vehicles.present? %>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <%= form_with url: search_vehicles_path, method: :get do |form| %>
+          <div class="d-md-flex d-lg-flex d-sm-block flex-sm-row mt-sm-2">
+            <%= form.text_field :vehicle_number, class: "form-control me-sm-2 me-lg-2 w-sm-50", placeholder: "Enter Vehicle Number" %>
+            <%= form.submit "Search", class: "btn btn-outline-success" %>
+          </div>
+        <% end %>
+      </div>
+    </nav>
 
-  <div class="container-fluid col-10 offset-1">
-    <% @vehicles.each do |vehicle| %>
-      <div class="row mt-1">
-        <!-- for vehicle number -->
+    <div class="container-fluid ">
+      <div class="row mt-1 p-1">
         <div class="col-6">
-          <span><%= vehicle.vehicle_number %></span> -
-          <span><%= vehicle.vehicle_model %></span>
-        </div>
-        <!-- for vehicle type -->
-        <div class="col-3">
-          <%= vehicle.vehicle_type %>
-        </div>
-        <!-- for view page button -->
-        <div class="col-3 btn-group">
-          <%= link_to "edit", edit_vehicle_path(vehicle), class: "btn btn-warning" %>
-          <%= link_to "show", vehicle_path(vehicle), class: "btn btn-primary" %>
+          <h4>Vehicle Number</h4>
         </div>
       </div>
-    <% end %>
-  </div>
+
+      <% @vehicles.each do |vehicle| %>
+        <div class="row mt-1 p-1 border-bottom">
+          <!-- for vehicle number -->
+          <div class="col-md-6 col-lg-6">
+            <span><%= vehicle.vehicle_number %></span>
+            <span style="color: blue; font-size: small"><%= vehicle.vehicle_type %></span>
+          </div>
+          <!-- for view page button -->
+          <div class="col-3 btn-group btn-group-sm">
+            <%= link_to "edit", edit_vehicle_path(vehicle), class: "btn btn-warning" %>
+            <%= link_to "show", vehicle_path(vehicle), class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h3 class="mt-2 text-center" style="color: red">
+      No records found...
+    </h3>
+  <% end %>
 </div>

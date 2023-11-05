@@ -7,5 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 10.times do |i|
-  Vehicle.create(vehicle_model: "model #{i}", vehicle_number: "HIJFK4545#{i}", vehicle_type: 'bike', devise_id: "devise#{i}")
+  Vehicle.create(vehicle_model: "model #{i+10}", vehicle_number: "HIJFK4545#{i+10}", vehicle_type: 'bike', 
+                 devise_id: "devise#{i+10}", user_id: 1, status: true)
 end

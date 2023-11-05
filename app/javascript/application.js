@@ -4,3 +4,6 @@ import "./controllers"
 import "./src/jquery"
 import * as bootstrap from "bootstrap"
 import "chartkick/chart.js"
+
+
+console.log("Hello World!")

@@ -11,9 +11,13 @@ module Api
           head :not_found
         else
           # Create emission records associated with the vehicle
-          @emission_records = @vehicle.emission_records.build(emission_record_params)
+          @emission_record = @vehicle.emission_records.build(emission_record_params)
 
-          if @emission_records&.save
+          if @emission_record&.save
+            if @emission_record.carbon_dioxide > 1200 or @emission_record.carbon_monoxide > 100 or @emission_record.air_quality > 40
+              @vehicle.update(status: true )
+              UserAlertMailMailer.vehicle_alert(@vehicle).deliver_later
+            end
             head :ok
           else
             # Handle the case where an emission record could not be saved, possibly return an error response
